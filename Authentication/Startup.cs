@@ -30,7 +30,7 @@ namespace Authentication
             services.AddDbContext<AuthenticationDB>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
             services.AddIdentity<IdentityUser,IdentityRole>().
                 AddDefaultUI().
-                AddEntityFrameworkStores<AuthenticationDB>();
+                AddEntityFrameworkStores<AuthenticationDB>().AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

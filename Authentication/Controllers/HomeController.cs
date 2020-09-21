@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Authentication.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Authentication.Controllers
 {
+    [Authorize(Roles = UserRoles.user1)]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
